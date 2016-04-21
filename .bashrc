@@ -32,13 +32,17 @@ alias grep='grep --color=auto'
 
 alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get autoclean'
 
-# Work
-alias extrahop='~/.dotfiles/extrahop/extrahop.sh'
+#Alexa
+alias zipapp='zip -r -j app.zip src/*'
 
 # TMUX
 alias tmux='TERM=screen-256color-bce tmux -2 -u'
 alias ta='tmux attach -d -t'
 alias fzf='fzf-tmux'
+
+# Monitor
+alias monitoron='xrandr -d :0 --output HDMI1 --auto --above eDP1'
+alias monitoroff='xrandr -d :0 --output HDMI1 --off'
 
 # Powerline
 powerline-daemon -q
