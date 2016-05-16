@@ -1,7 +1,7 @@
-Ansel's dotfiles
+Robby's dotfiles
 ================
 
-My personal, opinionated dotfiles that I use on all my linux machines
+Based on [Ansel's dotfiles](https://github.com/anstosa/dotfiles/blob/master/install.sh)
 
 WARNING
 -------
@@ -16,6 +16,10 @@ Installation
 ------------
 
 1. Clone repo: `git clone git@github.com:anstosa/dotfiles.git ~/.dotfiles`
-4. **[OPTIONAL]** Backup existing dotfiles
-5. Install dotfiles: `~/.dotfiles/install.sh`
-6. **[RECOMMENDED]** Restart or `source ~/.bashrc` in all open terminals
+2. **[OPTIONAL]** Backup existing dotfiles
+3. Install dotfiles: `~/.dotfiles/install.sh`
+4. **[RECOMMENDED]** Restart or `source ~/.bashrc` in all open terminals
+5. [patch fonts](https://github.com/powerline/fonts) clone this repo to ~/powerline-fonts, run install.sh, then change terminal font to one of the powerline patched fonts.
+6. [fix colors](https://github.com/Anthony25/gnome-terminal-colors-solarized) clone this repo, run install any missing dependencies listed in the README, run install.sh.
+7. Install dmenu and i3lock: sudo apt-get install dmenu && sudo apt-get install i3lock
+8. [install vim dependency checker](https://github.com/junegunn/vim-plug) open vim, :PlugUpgrade, :PlugInstall, :PlugUpdate

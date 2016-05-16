@@ -1,6 +1,6 @@
 [user]
-    name = Robby Brosman
-    email = robbybro@extrahop.com
+	name = Robby Brosman
+	email = robbybro@extrahop.com
 [color]
     ui = auto
 [alias]
@@ -27,6 +27,6 @@
     eol = lf
     pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -F -R -X -x1,5' -
 [push]
-    default = upstream
+	default = upstream
 [branch]
-    autosetuprebase = always
+	autosetuprebase = always
