@@ -44,6 +44,9 @@ alias fzf='fzf-tmux'
 alias monitoron='xrandr -d :0 --output HDMI1 --auto --above eDP1'
 alias monitoroff='xrandr -d :0 --output HDMI1 --off'
 
+# eh
+alias makeeca='cd ~/git/depot/build && sudo make PLATFORM=ecm install'
+
 # Powerline
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1

@@ -30,3 +30,5 @@
 	default = upstream
 [branch]
 	autosetuprebase = always
+[diff]
+	renames = copies
