@@ -45,7 +45,9 @@ alias monitoron='xrandr -d :0 --output HDMI1 --auto --above eDP1'
 alias monitoroff='xrandr -d :0 --output HDMI1 --off'
 
 # eh
-alias makeeca='cd ~/git/depot/build && sudo make PLATFORM=ecm install'
+alias makeeca='cd ~/depot/build && sudo make distclean && sudo make PLATFORM=ecm install'
+alias makeeda='cd ~/depot/build && sudo make distclean && sudo make install'
+alias ehcontainer='sudo ~/depot/build/tools/ehcontainer'
 
 # Powerline
 powerline-daemon -q
