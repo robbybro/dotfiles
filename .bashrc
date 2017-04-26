@@ -53,7 +53,7 @@ alias ehcontainer='sudo ~/depot/build/tools/ehcontainer'
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 source ~/.dotfiles/tmuxinator.bash
 if [[ -z "$TMUX" && $- == *i* ]] ;then
     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
