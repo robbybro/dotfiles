@@ -102,3 +102,5 @@ export -f strip_diff_leading_symbols
 rule () {
     printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 }
+
+eval $(thefuck --alias)

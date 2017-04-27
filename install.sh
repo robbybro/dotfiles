@@ -108,3 +108,10 @@ else
     sudo apt-get install i3lock
     echo "Installed."
 fi
+if type fuck >/dev/null 2>&1; then
+    echo "Found f*ck"
+else
+    echo "Installing f*ck..."
+    pip install --user thefuck
+    echo "Installed."
+fi
