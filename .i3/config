@@ -36,8 +36,8 @@ bindsym $mod+d exec rofi -show run -bg "#222222" -fg "#2ECC71" -hlbg "#445544" -
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+l exec i3lock -d -c 000000
-exec xautolock -time 15 -locker 'i3lock -d -c 000000' &
+bindsym $mod+l exec i3lock -i ~/.i3/screenshot.png
+exec xautolock -time 15 -locker 'i3lock -i ~/.i3/screenshot.png' &
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -151,23 +151,21 @@ bar {
 
 for_window [window_role="pop-up"] floating enable
 
-# Fix monitor configuration
-exec_always --no-startup-id ~/.screenlayout/ApplyScreenLayout.sh
-
 # Put workspaces on correct monitors
 workspace 1 output DP-1
 workspace 2 output DVI-I-1
 
 # Start default programs
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
-exec --no-startup-id i3-msg 'workspace 2; exec google-chrome'
+exec --no-startup-id i3-msg 'workspace 1; exec google-chrome'
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+# verify sink index by checking the output of `pacmd list-sinks`
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 16 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 16 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 16 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness

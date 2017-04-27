@@ -92,3 +92,19 @@ else
     $DIR/plugins/fzf/install
     echo "Installed."
 fi
+
+if type rofi >/dev/null 2>&1; then
+    echo "Found rofi"
+else
+    echo "Installing rofi..."
+    sudo apt-get install rofi
+    echo "Installed."
+fi
+
+if type i3lock >/dev/null 2>&1; then
+    echo "Found i3lock"
+else
+    echo "Installing i3lock..."
+    sudo apt-get install i3lock
+    echo "Installed."
+fi

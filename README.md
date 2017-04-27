@@ -21,9 +21,10 @@ Installation
 4. **[RECOMMENDED]** Restart or `source ~/.bashrc` in all open terminals
 5. **Patch Fonts** -  clone [this repo](https://github.com/powerline/fonts) to ~/powerline-fonts, run install.sh, then change terminal font to one of the powerline patched fonts.
 6. **fix colors** clone [this repo](https://github.com/Anthony25/gnome-terminal-colors-solarized), run install.sh.
-7. Install rofi and i3lock: sudo apt-get install rofi && sudo apt-get install i3lock
-8. [install vim dependency checker](https://github.com/junegunn/vim-plug) open vim, :PlugUpgrade, :PlugInstall, :PlugUpdate
+7. [install vim dependency checker](https://github.com/junegunn/vim-plug) open vim, :PlugUpgrade, :PlugInstall, :PlugUpdate
 
 # Setting Up New Machine
 * [get Nvidia to play nice with Linux](https://askubuntu.com/questions/301648/how-to-install-nvidia-driver-in-ubuntu)
 * [set up ssh key with github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+* [install i3wm](https://i3wm.org/docs/repositories.html)
+* [install easily upgradable node](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
