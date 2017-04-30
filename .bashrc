@@ -40,6 +40,11 @@ alias tmux='TERM=screen-256color-bce tmux -2 -u'
 alias ta='tmux attach -d -t'
 alias fzf='fzf-tmux'
 
+# Docker
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
+
+
 # Monitor
 alias monitoron='xrandr -d :0 --output HDMI1 --auto --above eDP1'
 alias monitoroff='xrandr -d :0 --output HDMI1 --off'
