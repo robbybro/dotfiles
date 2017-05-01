@@ -28,3 +28,4 @@ Installation
 * [set up ssh key with github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 * [install i3wm](https://i3wm.org/docs/repositories.html)
 * [install easily upgradable node](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
+* [install spotify](https://www.spotify.com/us/download/linux/)
