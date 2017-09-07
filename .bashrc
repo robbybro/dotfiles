@@ -31,7 +31,7 @@ alias l1='ls -1'
 alias grep='grep --color=auto'
 
 alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get autoclean'
-
+alias sshdesktop='sudo sshfs -o allow_other,sshfs_debug,debug,LogLevel=DEBUG3,IdentityFile=/home/robbybro/.ssh/dekstop_rsa robbybro@67.168.74.207:/home/robbybro/git /mnt/desktop'
 #Alexa
 alias zipapp='sudo rm app.zip && zip -r -j app.zip src/*'
 
@@ -39,6 +39,10 @@ alias zipapp='sudo rm app.zip && zip -r -j app.zip src/*'
 alias tmux='TERM=screen-256color-bce tmux -2 -u'
 alias ta='tmux attach -d -t'
 alias fzf='fzf-tmux'
+
+# Docker
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 
 # Monitor
 alias monitoron='xrandr -d :0 --output HDMI1 --auto --above eDP1'
@@ -53,7 +57,7 @@ alias ehcontainer='sudo ~/depot/build/tools/ehcontainer'
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 source ~/.dotfiles/tmuxinator.bash
 if [[ -z "$TMUX" && $- == *i* ]] ;then
     ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
@@ -70,9 +74,6 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$
 
 # Source plugins
 source ~/.dotfiles/cdhist.sh
-
-# Source local
-source ~/.bashrc_local
 
 # Ruby
 if [[ -d ${HOME}/.rvm ]]; then
@@ -102,3 +103,5 @@ export -f strip_diff_leading_symbols
 rule () {
     printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 }
+
+eval $(thefuck --alias)
