@@ -32,6 +32,7 @@ alias grep='grep --color=auto'
 
 alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get autoclean'
 alias sshdesktop='sudo sshfs -o allow_other,sshfs_debug,debug,LogLevel=DEBUG3,IdentityFile=/home/robbybro/.ssh/dekstop_rsa robbybro@67.168.74.207:/home/robbybro/git /mnt/desktop'
+
 #Alexa
 alias zipapp='sudo rm app.zip && zip -r -j app.zip src/*'
 
