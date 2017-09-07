@@ -29,3 +29,4 @@ Installation
 * [install i3wm](https://i3wm.org/docs/repositories.html)
 * [install easily upgradable node](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
 * [install spotify](https://www.spotify.com/us/download/linux/)
+* [set up sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
