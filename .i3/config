@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Yosemite San Fransisco, fontawesome
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -29,15 +29,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi
-bindsym $mod+d exec rofi -show run -bg "#222222" -fg "#2ECC71" -hlbg "#445544" -hlfg "#2EEE71" -bw 4 -eh 1 -font "Roboto Slab 18" -opacity "80" -lines 8 -line-margin 4 -width 50 -padding 160 -terminal urxvtc
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-bindsym $mod+l exec i3lock -i ~/.i3/screenshot.png
-exec xautolock -time 15 -locker 'i3lock -i ~/.i3/screenshot.png' &
+bindsym $mod+l exec i3lock -d -c 000000
+exec xautolock -time 15 -locker 'i3lock -d -c 000000' &
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -84,28 +77,39 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -140,28 +144,26 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
-
 for_window [window_role="pop-up"] floating enable
 
 # Put workspaces on correct monitors
-workspace 1 output DP-1
-workspace 2 output DVI-I-1
+workspace $workspace1 output DP-1
+workspace $workspace2 output DVI-I-1
 
 # Start default programs
-exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome'
+# exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
+# exec --no-startup-id i3-msg 'workspace 1; exec google-chrome'
+# assign[class="Google-chrome"] $workspace2
+# assign[class="Gnome-terminal"] $workspace1
+# assign[class="● config - .i3 - Visual Studio Code"] $workspace1
+assign[class="Spotify"] $workspace3
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 
 # Pulse Audio controls
 # verify sink index by checking the output of `pacmd list-sinks`
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 16 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 16 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 3 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 3 -5% #decrease sound volume
 bindsym XF86AudioMute exec pactl set-sink-mute 16 toggle # mute sound
 
 # Sreen brightness controls
@@ -170,3 +172,54 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 # Natural scrolling
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -106, -106
+
+# TODO: http://ethanschoonover.com/solarized
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+set $bg-color                   #2f343f
+set $inactive-bg-color          #2f343f
+set $text-color                 #f3f4f5
+set $inactive-text-color        #676e7d
+set $urgent-bg-color            #e53935
+
+# window colors
+#                               border    background     text    indicator
+client.focused                  $base0D   $base0D        $base00 $base01
+client.focused_inactive         $base02   $base02        $base03 $base01
+client.unfocused                $base01   $base01        $base03 $base01
+client.urgent                   $base02   $base08        $base07 $base08
+
+hide_edge_borders both
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3blocks -c ~/.i3/i3blocks.conf
+        colors {
+                separator $base03
+                background $base01
+                statusline $base05
+                focused_workspace $base0C $base0D $base00
+                active_workspace $base02 $base02 $base07
+                inactive_workspace $base01 $base01 $base03
+                urgent_workspace $base08 $base08 $base07
+        }
+}
+
+# start rofi
+exec_always compton -f
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 800 -opacity "1" -bw 0 -bc "$bg-color"  -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18" -fullscreen
