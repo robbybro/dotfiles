@@ -31,6 +31,7 @@ alias l1='ls -1'
 alias grep='grep --color=auto'
 
 alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get autoclean'
+alias sshdesktop='sudo sshfs -o allow_other,sshfs_debug,debug,LogLevel=DEBUG3,IdentityFile=/home/robbybro/.ssh/dekstop_rsa robbybro@67.168.74.207:/home/robbybro/git /mnt/desktop'
 
 #Alexa
 alias zipapp='sudo rm app.zip && zip -r -j app.zip src/*'
@@ -43,7 +44,6 @@ alias fzf='fzf-tmux'
 # Docker
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
-
 
 # Monitor
 alias monitoron='xrandr -d :0 --output HDMI1 --auto --above eDP1'
@@ -75,9 +75,6 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$
 
 # Source plugins
 source ~/.dotfiles/cdhist.sh
-
-# Source local
-source ~/.bashrc_local
 
 # Ruby
 if [[ -d ${HOME}/.rvm ]]; then

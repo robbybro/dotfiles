@@ -1,5 +1,4 @@
 Robby's dotfiles
-================
 
 Based on [Ansel's dotfiles](https://github.com/anstosa/dotfiles/blob/master/install.sh)
 
@@ -19,9 +18,10 @@ Installation
 2. **[OPTIONAL]** Backup existing dotfiles
 3. Install dotfiles: `~/.dotfiles/install.sh`
 4. **[RECOMMENDED]** Restart or `source ~/.bashrc` in all open terminals
-5. **Patch Fonts** -  clone [this repo](https://github.com/powerline/fonts) to ~/powerline-fonts, run install.sh, then change terminal font to one of the powerline patched fonts.
-6. **fix colors** clone [this repo](https://github.com/Anthony25/gnome-terminal-colors-solarized), run install.sh.
-7. [install vim dependency checker](https://github.com/junegunn/vim-plug) open vim, :PlugUpgrade, :PlugInstall, :PlugUpdate
+5. [patch fonts](https://github.com/powerline/fonts) clone this repo to ~/powerline-fonts, run install.sh, then change terminal font to one of the powerline patched fonts.
+6. [fix colors](https://github.com/Anthony25/gnome-terminal-colors-solarized) clone this repo, run install any missing dependencies listed in the README, run install.sh.
+7. Install rofi and i3lock: sudo apt-get install rofi && sudo apt-get install i3lock
+8. [install vim dependency checker](https://github.com/junegunn/vim-plug) open vim, :PlugUpgrade, :PlugInstall, :PlugUpdate
 
 # Setting Up New Machine
 * [get Nvidia to play nice with Linux](https://askubuntu.com/questions/301648/how-to-install-nvidia-driver-in-ubuntu)
@@ -29,3 +29,4 @@ Installation
 * [install i3wm](https://i3wm.org/docs/repositories.html)
 * [install easily upgradable node](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
 * [install spotify](https://www.spotify.com/us/download/linux/)
+* [set up sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
